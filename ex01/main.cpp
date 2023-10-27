@@ -1,42 +1,49 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include <cstdlib>
 
-// int main()
-// {
-// 	const Animal* meta = new Animal();
-// 	const Animal* j = new Dog(); //up-casting
-// 	const Animal* i = new Cat(); //up-casting
-
-// 	std::cout << j->getType() << " " << std::endl;
-// 	std::cout << i->getType() << " " << std::endl;
-
-// 	j->makeSound();
-// 	i->makeSound();
-// 	meta->makeSound();
-
-// 	Dog* up_j = (Dog *)j;
-
-// 	up_j->setIdeas("", 0);
-// 	std::cout << up_j->getIdeas(0) << std::endl;
-
-// 	return (0);
-// }
-
-// void	leak_check()
-// {
-// 	system("leaks a.out");
-// }
+void	leak_check()
+{
+	std::system("leaks a.out");
+}
 
 int main()
 {
-	// atexit(leak_check);
+	std::atexit(leak_check);
 
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	
 	delete j;
 	delete i;
-	
+
+	Dog *bow = new Dog();
+	Dog c_bow;
+
+	Brain	awake_brain;
+	Brain	*temp_brain;
+
+	for (int i = 0; i < 100; i++)
+	{
+		awake_brain.setIdeas("Dog Awake!", i);
+	}
+
+	bow->setBrain(&awake_brain);
+	temp_brain = bow->getBrain();
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << temp_brain->getIdeas(i) << std::endl;
+	}
+
+	c_bow = *bow;
+	temp_brain = c_bow.getBrain();
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << temp_brain->getIdeas(i) << std::endl;
+	}
+
+	delete bow;
+
 	return (0);
 }
