@@ -8,10 +8,10 @@ class Ice : public AMateria
 	public:
 		Ice();
 		Ice(const Ice &other);
-		~Ice();
-		Ice&		operator=(const Ice &other);
-		AMateria*	clone() const;
-		void		use(ICharacter& target);
+		virtual ~Ice();
+		Ice&				operator=(const Ice &other);
+		virtual AMateria*	clone() const;
+		virtual void		use(ICharacter& target);
 };
 
 #endif

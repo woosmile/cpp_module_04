@@ -36,7 +36,7 @@ AMateria&	AMateria::operator=(const AMateria &other)
 	return (*this);
 }
 
-std::string const &	AMateria::getType() const //Returns the materia type
+std::string const &	AMateria::getType() const
 {
 	return (_type);
 }

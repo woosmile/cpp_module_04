@@ -6,10 +6,10 @@ RM = rm
 RMFLAGS = -rf
 
 HEADER = \
+ICharacter.hpp \
 AMateria.hpp \
 Cure.hpp \
 Ice.hpp \
-ICharacter.hpp \
 Character.hpp \
 IMateriaSource.hpp \
 MateriaSource.hpp
@@ -18,10 +18,8 @@ SRCS = \
 AMateria.cpp \
 Cure.cpp \
 Ice.cpp \
-ICharacter.cpp \
 Character.cpp \
-IMateriaSource.cpp \
-MateriaSource.cpp
+MateriaSource.cpp \
 main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
