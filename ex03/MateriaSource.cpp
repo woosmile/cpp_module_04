@@ -1,6 +1,6 @@
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource()
+MateriaSource::MateriaSource(): _mold_idx(0)
 {
 	std::cout << "MateriaSource default constructor called" << std::endl;
 
@@ -10,7 +10,7 @@ MateriaSource::MateriaSource()
 	}
 }
 
-MateriaSource::MateriaSource(const MateriaSource &other)
+MateriaSource::MateriaSource(const MateriaSource &other): _mold_idx(0)
 {
 	std::cout << "MateriaSource copy constructor called" << std::endl;
 	for (int i = 0; i < SLOT; i++)
@@ -40,6 +40,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &other)
 
 	if (this != &other)
 	{
+		_mold_idx = other._mold_idx;
 		for (int i = 0; i < SLOT; i++)
 		{
 			if (_mold[i] != NULL)
@@ -71,16 +72,17 @@ void MateriaSource::learnMateria(AMateria* m)
 				return ;
 			}
 		}
-		for (int i = 0; i < SLOT; i++)
+		if (_mold[_mold_idx] == NULL)
 		{
-			if (_mold[i] == NULL)
-			{
-				_mold[i] = m;
-				return ;
-			}
+			_mold[_mold_idx] = m;
+			_mold_idx = (_mold_idx + 1) % 4;
 		}
-		delete m;
-		std::cout << "mold is full" << std::endl;
+		else
+		{
+			delete _mold[_mold_idx];
+			_mold[_mold_idx] = m;
+			_mold_idx = (_mold_idx + 1) % 4;
+		}
 	}
 }
 

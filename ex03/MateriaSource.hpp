@@ -9,6 +9,7 @@ class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria	*_mold[SLOT];
+		int			_mold_idx;
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource &other);
