@@ -8,7 +8,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria	*_mold[4];
+		AMateria	*_mold[SLOT];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource &other);

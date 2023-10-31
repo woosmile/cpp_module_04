@@ -88,7 +88,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	int	i = 0;
 
-	while (i < 4)
+	while (i < SLOT)
 	{
 		if (type == _mold[i]->getType())
 		{

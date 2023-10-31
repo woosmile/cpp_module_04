@@ -101,7 +101,7 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= 4)
+	if (idx < 0 || idx >= SLOT)
 		std::cout << "Wrong index" << std::endl;
 	else
 	{
@@ -114,7 +114,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx >= 4)
+	if (idx < 0 || idx >= SLOT)
 		std::cout << "Wrong index" << std::endl;
 	else
 	{
