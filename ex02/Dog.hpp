@@ -8,11 +8,11 @@ class Dog : public AAnimal
 	public:
 		Dog();
 		Dog(const Dog &other);
-		~Dog();
+		virtual ~Dog();
 		Dog&	operator=(const Dog &other);
-		void		makeSound() const;
-		std::string	getType() const;
-		void		setType(const std::string type);
+		virtual void		makeSound() const;
+		virtual std::string	getType() const;
+		virtual void		setType(const std::string type);
 };
 
 

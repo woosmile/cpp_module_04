@@ -8,11 +8,11 @@ class Cat : public AAnimal
 	public:
 		Cat();
 		Cat(const Cat &other);
-		~Cat();
+		virtual ~Cat();
 		Cat&	operator=(const Cat &other);
-		void		makeSound() const;
-		std::string	getType() const;
-		void		setType(const std::string type);
+		virtual void		makeSound() const;
+		virtual std::string	getType() const;
+		virtual void		setType(const std::string type);
 };
 
 

@@ -3,7 +3,7 @@
 
 # include "AMateria.hpp"
 
-# define SLOT	4
+# define SLOT 4
 
 class Character : public ICharacter
 {

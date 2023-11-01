@@ -28,17 +28,17 @@ int main()
 	// std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
+	std::cout << w_i->getType() << " " << std::endl;
 
 	// meta->makeSound();
 	j->makeSound();
 	i->makeSound();
+	w_i->makeSound();
 
 	std::cout << std::endl << "-----Down Casting-----" << std::endl;
 
-	std::cout << w_i->getType() << " " << std::endl;
 	std::cout << down_w_i->getType() << " " << std::endl;
-
-	w_i->makeSound();
+	
 	down_w_i->makeSound();
 
 	std::cout << std::endl << "-----Destructor called-----" << std::endl;

@@ -68,7 +68,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		{
 			if (_mold[i] == m)
 			{
-				std::cout << "Same Materia already exists in inventory slot [" << i << "]" << std::endl;
+				std::cout << "Same Materia already exists in mold slot [" << i << "]" << std::endl;
 				return ;
 			}
 		}
@@ -88,14 +88,16 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	int	i = 0;
+	int			i = 0;
+	AMateria	*clone_materia;
 
 	while (i < SLOT)
 	{
 		if (type == _mold[i]->getType())
 		{
+			clone_materia = _mold[i]->clone();
 			std::cout << "Successfully created Materia of type : [" << type << "]" << std::endl;
-			return (_mold[i]->clone());
+			return (clone_materia);
 		}
 		i++;
 	}

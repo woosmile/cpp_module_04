@@ -12,12 +12,16 @@ int main()
 {
 	std::atexit(leak_check);
 
+	std::cout << std::endl << "-----Basic Test-----" << std::endl;
+
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	
 	delete j;
 	delete i;
 
+	std::cout << std::endl << "-----Advanced Test-----" << std::endl;
+	
 	Dog *bow = new Dog();
 	Dog c_bow;
 
