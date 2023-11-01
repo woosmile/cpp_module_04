@@ -52,6 +52,12 @@ int main()
 	src2->learnMateria(new Ice());
 	src2->learnMateria(new Cure());
 
+	std::cout << std::endl << "-----Same Materia in MateriaSource-----" << std::endl;
+
+	AMateria	*same_cure = new Cure();
+	src2->learnMateria(same_cure);
+	src2->learnMateria(same_cure);
+
 	ICharacter* me2 = new Character("me");
 	
 	AMateria* tmp2;
